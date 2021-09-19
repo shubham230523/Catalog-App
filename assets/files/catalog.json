@@ -1,0 +1,75 @@
+{
+    "products": [{
+            "id": 1,
+            "name": "iphone 12 Pro",
+            "desc": "Apple iphone pro 12th generation",
+            "price": 999,
+            "color": "#33505a",
+            "image": "https://www.gizmochina.com/wp-content/uploads/2020/05/iphone-12-pro-max-family-hero-all-600x600.jpg"
+
+
+        },
+        {
+            "id": 2,
+            "name": "Google pixel 5",
+            "desc": "The 5th smartphone of google pixel series",
+            "price": 750,
+            "color": "#00ac51",
+            "image": "https://www.gizmochina.com/wp-content/uploads/2020/05/iphone-12-pro-max-family-hero-all-600x600.jpg"
+
+
+        },
+        {
+            "id": 3,
+            "name": "Apple macbook air",
+            "desc": "The latest macbook air of apple",
+            "price": 1600,
+            "color": "#e0bfae",
+
+            "image": "https://www.gizmochina.com/wp-content/uploads/2020/05/iphone-12-pro-max-family-hero-all-600x600.jpg"
+
+
+        },
+        {
+            "id": 4,
+            "name": "Playstation 5",
+            "desc": "The 5th version of playstation 5 game console",
+            "price": 1350,
+            "color": "#544ee4",
+            "image": "https://www.gizmochina.com/wp-content/uploads/2020/05/iphone-12-pro-max-family-hero-all-600x600.jpg"
+
+
+        },
+        {
+            "id": 5,
+            "name": "AirPods Pro",
+            "desc": "Experience all the things by sonunds with all new airpods pro",
+            "price": 500,
+            "color": "#e3e4e9",
+            "image": "https://www.gizmochina.com/wp-content/uploads/2020/05/iphone-12-pro-max-family-hero-all-600x600.jpg"
+
+
+        },
+        {
+            "id": 6,
+            "name": "Galaxy S21 ultra",
+            "desc": "The all new Galaxy S21 ultra with 5 rear camera's",
+            "price": 680,
+            "color": "#f73984",
+            "image": "https://www.gizmochina.com/wp-content/uploads/2020/05/iphone-12-pro-max-family-hero-all-600x600.jpg"
+
+
+        },
+
+        {
+            "id": 7,
+            "name": "One plus 9 5G",
+            "desc": "The 5th version of one plus series with 5G support",
+            "price": 550,
+            "color": "#7c95eb",
+            "image": "https://www.gizmochina.com/wp-content/uploads/2020/05/iphone-12-pro-max-family-hero-all-600x600.jpg"
+
+
+        }
+    ]
+}
