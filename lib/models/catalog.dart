@@ -1,17 +1,11 @@
+import 'dart:convert';
+
 class CatalogModels{
   
-static final items  = [Item(
-  id: 1,
-  name: "iphone 12 pro",
-  desc: "Apple iphone 12th generation",
-  price: 999,
-  color: "#33505a",
-  image: "https://www.gizmochina.com/wp-content/uploads/2020/05/iphone-12-pro-max-family-hero-all-600x600.jpg"
-  // image: "https://images.unsplash.com/photo-1620225678467-3bcbf4f140f0?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=375&q=80"
-)];
+static List<Item>  items  = [];
 
 }
-class Item{
+class Item {
   final int id;
   final String name;
   final String desc;
@@ -19,7 +13,102 @@ class Item{
   final String color;
   final String image;
 
-  Item({required this.id, required this.name, required this.desc,
-   required this.price, required this.color, required this.image});
+  Item({
+    required this.id,
+    required this.name,
+    required this.desc,
+    required this.price,
+    required this.color,
+    required this.image,
+  });
 
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  Item copyWith({
+    int? id,
+    String? name,
+    String? desc,
+    num? price,
+    String? color,
+    String? image,
+  }) {
+    return Item(
+      id: id ?? this.id,
+      name: name ?? this.name,
+      desc: desc ?? this.desc,
+      price: price ?? this.price,
+      color: color ?? this.color,
+      image: image ?? this.image,
+    );
+  }
+
+  Map<String, dynamic> toMap() {
+    return {
+      'id': id,
+      'name': name,
+      'desc': desc,
+      'price': price,
+      'color': color,
+      'image': image,
+    };
+  }
+
+  factory Item.fromMap(Map<String, dynamic> map) {
+    return Item(
+      id: map['id'],
+      name: map['name'],
+      desc: map['desc'],
+      price: map['price'],
+      color: map['color'],
+      image: map['image'],
+    );
+  }
+
+  String toJson() => json.encode(toMap());
+
+  factory Item.fromJson(String source) => Item.fromMap(json.decode(source));
+
+  @override
+  String toString() {
+    return 'Item(id: $id, name: $name, desc: $desc, price: $price, color: $color, image: $image)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(this, other)) return true;
+  
+    return other is Item &&
+      other.id == id &&
+      other.name == name &&
+      other.desc == desc &&
+      other.price == price &&
+      other.color == color &&
+      other.image == image;
+  }
+
+  @override
+  int get hashCode {
+    return id.hashCode ^
+      name.hashCode ^
+      desc.hashCode ^
+      price.hashCode ^
+      color.hashCode ^
+      image.hashCode;
+  }
 }

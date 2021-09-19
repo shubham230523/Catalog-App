@@ -11,8 +11,6 @@ class homepage extends StatefulWidget {
 }
 
 class _homepageState extends State<homepage> {
-final dummyList= List.generate(20, (index) => CatalogModels.items[0]);
-
 
 @override
   void initState() {
@@ -21,11 +19,16 @@ final dummyList= List.generate(20, (index) => CatalogModels.items[0]);
     loadData();
   }
   loadData() async {
+    await Future.delayed(Duration(seconds: 2));
     final catalogJson  = await rootBundle.loadString("assets/files/catalog.json");
     final decodedData = jsonDecode(catalogJson);
     var productsData = decodedData['products'];
-    
+    CatalogModels.items = List.from(productsData).map<Item>((item) => 
+    Item.fromMap(item)).toList(); 
 
+    setState(() {
+      
+    });
   }
   @override
   Widget build(BuildContext context) {
@@ -36,12 +39,14 @@ final dummyList= List.generate(20, (index) => CatalogModels.items[0]);
       ),
         body: Padding(
           padding: const EdgeInsets.all(16.0),
-          child: ListView.builder(
-            itemCount: dummyList.length,
+          child: (CatalogModels.items!=null && CatalogModels.items.isNotEmpty)? ListView.builder(
+            itemCount: CatalogModels.items.length,
             itemBuilder: (context , index){
-              return ItemWidget(item: dummyList[index]);
+              return ItemWidget(item: CatalogModels.items[index]);
             },
-          ),
+          ):Center(
+            child: CircularProgressIndicator(),
+          )
         ),
         drawer: MyDrawer(),
       ); 
