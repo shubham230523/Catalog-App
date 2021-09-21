@@ -1,12 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
 class MyDrawer extends StatelessWidget {
-  const MyDrawer({ Key? key }) : super(key: key);
-
-final image_url = "https://www.nj.com/resizer/h8MrN0-Nw5dB5FOmMVGMmfVKFJo=/450x0/smart/cloudfront-us-east-1.images.arcpublishing.com/advancelocal/SJGKVE5UNVESVCW7BBOHKQCZVE.jpg";
-
   @override
   Widget build(BuildContext context) {
+    final imageUrl =
+        "https://avatars.githubusercontent.com/u/12619420?s=460&u=26db98cbde1dd34c7c67b85c240505a436b2c36d&v=4";
     return Drawer(
       child: Container(
         color: Colors.deepPurple,
@@ -17,54 +16,54 @@ final image_url = "https://www.nj.com/resizer/h8MrN0-Nw5dB5FOmMVGMmfVKFJo=/450x0
               padding: EdgeInsets.zero,
               child: UserAccountsDrawerHeader(
                 margin: EdgeInsets.zero,
-                accountName: Text("Shubham Thorat"),
-                accountEmail: Text("sample@gmail.com"),
+                accountName: Text("Pawan Kumar"),
+                accountEmail: Text("mtechviral@gmail.com"),
                 currentAccountPicture: CircleAvatar(
-                  backgroundImage: NetworkImage(image_url),
-                )
-              )
+                  backgroundImage: NetworkImage(imageUrl),
+                ),
+              ),
             ),
             ListTile(
               leading: Icon(
                 CupertinoIcons.home,
-                color: Colors.white
+                color: Colors.white,
               ),
               title: Text(
                 "Home",
                 textScaleFactor: 1.2,
                 style: TextStyle(
                   color: Colors.white,
-                )
+                ),
               ),
             ),
             ListTile(
               leading: Icon(
                 CupertinoIcons.profile_circled,
-                color: Colors.white
+                color: Colors.white,
               ),
               title: Text(
                 "Profile",
                 textScaleFactor: 1.2,
                 style: TextStyle(
                   color: Colors.white,
-                )
+                ),
               ),
             ),
             ListTile(
               leading: Icon(
                 CupertinoIcons.mail,
-                color: Colors.white
+                color: Colors.white,
               ),
               title: Text(
-                "Email",
+                "Email me",
                 textScaleFactor: 1.2,
                 style: TextStyle(
                   color: Colors.white,
-                )
+                ),
               ),
             )
           ],
-        )
+        ),
       ),
     );
   }
